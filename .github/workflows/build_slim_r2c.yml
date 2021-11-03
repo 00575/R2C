@@ -7,8 +7,6 @@ jobs:
 
   build:
     runs-on: ubuntu-20.04
-    env:
-      DEVICE: r2c
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
@@ -45,7 +43,7 @@ jobs:
           mkdir -p $GITHUB_WORKSPACE/release
           mv $(ls -1 ./bin/targets/*/*/*img.gz | head -1) $GITHUB_WORKSPACE/release/r2c-slim.img.gz
           cd $GITHUB_WORKSPACE/release/ && md5sum r2c-slim.img.gz > r2c-slim.img.gz.md5
-          gzip -dc r2c-slim.img.gz | md5sum | sed "s/-/r2c-slim.img/" > $r2c-slim.img.md5
+          gzip -dc r2c-slim.img.gz | md5sum | sed "s/-/r2c-slim.img/" > r2c-slim.img.md5
           echo "strDate=$(TZ=UTC-8 date +%Y-%m-%d)" >> $GITHUB_ENV
           echo "strDevice=$(echo r2c | awk '{print toupper($0)}')" >> $GITHUB_ENV
       
