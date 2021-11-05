@@ -1,6 +1,7 @@
 name: build_slim_r2c
 
 on:
+  repository_dispatch:
   workflow_dispatch:
 
 jobs:
