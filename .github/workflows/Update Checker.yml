@@ -10,7 +10,7 @@ on:
     - cron: 00 22 * * *
 
 jobs:
-  jell:
+  Checker:
     runs-on: ubuntu-latest
 
     steps:
