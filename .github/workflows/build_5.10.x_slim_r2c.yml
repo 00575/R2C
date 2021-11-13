@@ -63,3 +63,4 @@ jobs:
           file_glob: true
           overwrite: true
           release_name: r2c-${{env.strDate}}
+          body: "5.10.X内核固件更新"
